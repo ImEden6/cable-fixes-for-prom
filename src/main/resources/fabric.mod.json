@@ -1,0 +1,25 @@
+{
+    "schemaVersion": 1,
+    "id": "ad_astra_cable_fix",
+    "version": "${version}",
+    "name": "Ad Astra Cable Fix",
+    "description": "Fixes Ad Astra machines crashing due to nested transactions when external fluid/item pipes interact with them.",
+    "authors": [
+        "Antigravity"
+    ],
+    "contact": {},
+    "license": "MIT",
+    "icon": "assets/ad_astra_cable_fix/icon.png",
+    "environment": "*",
+    "entrypoints": {},
+    "mixins": [
+        "ad_astra_cable_fix.mixins.json"
+    ],
+    "depends": {
+        "fabricloader": ">=0.15.11",
+        "minecraft": "~1.20.1",
+        "java": ">=17",
+        "fabric-api": "*",
+        "ad_astra": "*"
+    }
+}

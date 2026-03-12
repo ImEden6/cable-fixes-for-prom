@@ -1,0 +1,26 @@
+# Gradle
+.gradle
+build/
+bin/
+run/
+out/
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# Fabric
+.fabric
+
+# Logs
+logs/
+*.log
+
+# Junk
+crash.txt
+crash-reports/
+ad_astra_cable_fix_logo_*.png
+
+# OS
+.DS_Store
+Thumbs.db
