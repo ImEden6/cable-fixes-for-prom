@@ -1,18 +1,26 @@
 # Cable Fixes for Prom
 
-A Fabric mod that fixes nested transaction crashes in **Ad Astra** machines when interacting with external fluid or item pipes (like those from Pipez or other transport mods).
+A Fabric mod that fixes various mod-interactivity crashes and issues on the Prometheus modpack, specifically focusing on **Ad Astra** machines and **Create** / **Applied Energistics 2** copycat blocks.
 
 ## 🚀 Features
-- **Nested Transaction Fix**: Prevents the `IllegalStateException: Transaction already in progress` crash when machines attempt to process internal transactions while an external pipe is already holding an open transaction.
-- **Improved Compatibility**: Makes Ad Astra machines work reliably with a wider variety of item/fluid transport systems.
+
+- **Nested Transaction Fix (Ad Astra)**: Prevents the `IllegalStateException: Transaction already in progress` crash when external fluid/item pipes (like those from Pipez or other transport mods) interact with Ad Astra machines while an internal transaction is active.
+- **Create & AE2 Compatibility**: Resolves `ClassCastException` crashes when Create's Copycat blocks query AE2 cables and busses for appearance data by implementing `RenderAttachedBlockView` on Create's `FilteredBlockAndTintGetter`.
+- **Copycat Material Acceptance**: Bypasses voxel shape and entity checks for AE2 cables and busses, allowing them to be accepted and used as copycat materials.
+- **Conditional Loading**: Compatibility mixins for Create and AE2 are only applied if both mods are active in the environment, preventing class loading issues.
 
 ## 🛠️ How it Works
-This mod uses Sponge Mixins to wrap `MachineFluidTransactionMixin` and (if applicable) item transactions, ensuring they only attempt to open a transaction if one isn't already active, or by delegating to the existing transaction context.
+
+- **Ad Astra Fixes**: Sponge Mixins hook into the machine block entities (`updateSlots`) and defer fluid/item updates to the tail end of the server tick if an active transaction is open.
+- **Create & AE2 Fixes**: Implements Fabric's `RenderAttachedBlockView` on Create's `FilteredBlockAndTintGetter` to delegate render attachment queries. A mixin on `CopycatBlock.getAcceptedBlockState` handles material checks for AE2's `CableBusBlock` to accept them as valid copycat blocks.
 
 ## 📦 Installation
+
 1. Install the [Fabric Loader](https://fabricmc.net/).
 2. Add this `.jar` to your `mods` folder.
-3. Requires **Ad Astra** and its dependencies.
+3. Requires **Ad Astra** as a hard dependency. **Create** and **Applied Energistics 2** are optionally supported (compatibility features load automatically if both are present).
 
 ## 📜 License
+
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
