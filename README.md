@@ -1,4 +1,4 @@
-# Ad Astra Cable Fix
+# Cable Fixes for Prom
 
 A Fabric mod that fixes nested transaction crashes in **Ad Astra** machines when interacting with external fluid or item pipes (like those from Pipez or other transport mods).
 

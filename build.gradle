@@ -2,7 +2,7 @@ plugins {
 	id 'fabric-loom' version '1.7-SNAPSHOT'
 }
 
-version = "1.0.0"
+version = "1.1.0"
 group = "com.mervyn"
 
 repositories {
@@ -36,4 +36,12 @@ java {
 	withSourcesJar()
 	sourceCompatibility = JavaVersion.VERSION_17
 	targetCompatibility = JavaVersion.VERSION_17
+}
+
+jar {
+    exclude "com/simibubi/create/content/decoration/copycat/**"
+}
+
+sourcesJar {
+    exclude "com/simibubi/create/content/decoration/copycat/**"
 }

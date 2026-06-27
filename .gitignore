@@ -24,3 +24,4 @@ ad_astra_cable_fix_logo_*.png
 # OS
 .DS_Store
 Thumbs.db
+references/

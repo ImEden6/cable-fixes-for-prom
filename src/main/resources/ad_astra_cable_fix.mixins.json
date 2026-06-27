@@ -3,9 +3,12 @@
     "minVersion": "0.8",
     "package": "com.mervyn.adastracablefix.mixin",
     "compatibilityLevel": "JAVA_17",
+    "plugin": "com.mervyn.adastracablefix.mixin.AdAstraCableFixMixinConfigPlugin",
     "mixins": [
         "MachineFluidTransactionMixin",
-        "RecipeMachineTickMixin"
+        "RecipeMachineTickMixin",
+        "FilteredBlockAndTintGetterMixin",
+        "CopycatBlockMixin"
     ],
     "injectors": {
         "defaultRequire": 1

@@ -2,7 +2,7 @@
     "schemaVersion": 1,
     "id": "ad_astra_cable_fix",
     "version": "${version}",
-    "name": "Ad Astra Cable Fix",
+    "name": "Cable Fixes for Prom",
     "description": "Fixes Ad Astra machines crashing due to nested transactions when external fluid/item pipes interact with them.",
     "authors": [
         "Antigravity"
