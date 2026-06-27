@@ -1,6 +1,6 @@
 # Cable Fixes for Prom
 
-A Fabric mod that fixes various mod-interactivity crashes and issues on the Prometheus modpack, specifically focusing on **Ad Astra** machines and **Create** / **Applied Energistics 2** copycat blocks.
+A Fabric mod that fixes various mod-interactivity crashes and issues on the Prominence 2 modpack, specifically focusing on **Ad Astra** machines and **Create** / **Applied Energistics 2** copycat blocks.
 
 ## 🚀 Features
 
